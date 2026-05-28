@@ -1,0 +1,70 @@
+# Created by newuser for 5.9
+fastfetch
+
+# Editor
+export EDITOR=hx
+
+alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
+
+# Git stuff
+autoload -Uz compinit && compinit # Git autocomplete
+autoload -Uz vcs_info # VCS info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT='${vcs_info_msg_0_}'
+zstyle ':vcs_info:git:*' formats '%b' # Display on the left side of the screen
+
+# Home/End/Delete keys
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+
+# Different prompt colours for each distro
+NAME_COLOUR="magenta"
+DIR_COLOUR="blue"
+
+if [[ "$(hostname)" == *"debian"* ]]; then
+	
+	# red
+	NAME_COLOUR="#ff6961"
+	# orange
+	DIR_COLOUR="#ffb347"
+
+elif [[ "$(hostname)" == *"arch"* ]]; then
+
+	# dark blue
+	NAME_COLOUR="#779ecb"
+	# light blue
+	DIR_COLOUR="#aec6cf"
+
+elif [[ "$(hostname)" == *"fedora"* ]]; then
+	
+	# light blue
+	NAME_COLOUR="#aec6cf"
+	# red
+	DIR_COLOUR="#cfaec6"
+
+fi
+
+# Include the /usr/games directory where Debian puts games
+export PATH=$PATH:/usr/games
+
+# Pick the prompt colour then unset the variable for it
+PS1="%B%F{$NAME_COLOUR}%n@%m %F{$DIR_COLOUR}%~%F{$DIR_COLOUR}$ %f%b"
+unset NAME_COLOUR
+unset DIR_COLOUR
+
+if env | grep -Fq 'DISTROBOX'; then
+
+else
+	# Arch distrobox
+	alias archbtw="distrobox enter Arch"
+
+	# Auto suggestions
+	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+	# Syntax highlighting
+	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+fi
