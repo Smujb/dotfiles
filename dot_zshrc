@@ -2,11 +2,6 @@
 
 fastfetch
 
-# set PATH so it includes ~/.local/bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-
 # Editor
 if [[ $(whence -p "hx") ]] ; then
 	export EDITOR=hx
