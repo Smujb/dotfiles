@@ -8,6 +8,7 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+set $alt Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -99,16 +100,18 @@ mouse_warping container
     # Show wlogout
     bindsym $mod+Shift+e exec pgrep wlogout >/dev/null 2>&1 && killall wlogout || wlogout
 
-    # Lock screen
-    bindsym $mod+l exec swaylock
-#
 # Moving around:
 #
+    bindsym $alt+$left exec wtype -P left -p left
+    bindsym $alt+$down exec wtype -P down -p down
+    bindsym $alt+$up exec wtype -P up -p up
+    bindsym $alt+$right exec wtype -P right -p right
+    
     # Move your focus around (disabled for now)
-    # bindsym $mod+$left focus left
-    # bindsym $mod+$down focus down
-    # bindsym $mod+$up focus up
-    # bindsym $mod+$right focus right
+    bindsym $mod+$left focus left
+    bindsym $mod+$down focus down
+    bindsym $mod+$up focus up
+    bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -177,8 +180,8 @@ mouse_warping container
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+n splitv
+    # bindsym $mod+b splith
+    # bindsym $mod+n splitv
 
     # Switch the current container between different layout styles
     # Not in use right now
