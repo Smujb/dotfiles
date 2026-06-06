@@ -32,6 +32,11 @@
             "format": "{pretty-name}"
         },
         {
+            "type" : "command",
+            "key" : " 󱋩",
+            "text" : "source /etc/os-release && echo $ID:$VERSION_TAG"
+        },
+        {
             "type": "kernel",
             "key": " ",
             "format": "{1} {2}"
