@@ -12,7 +12,7 @@ fi
 alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
 
 # Git stuff
-autoload -Uz compinit && compinit # Git autocomplete
+autoload -Uz compinit && compinit -u # autocomplete
 autoload -Uz vcs_info # VCS info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
