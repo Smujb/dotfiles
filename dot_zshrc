@@ -13,7 +13,19 @@ alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
 
 # Completions
 autoload -Uz compinit && compinit -u
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' completer _approximate
+zstyle ':completion:*' matcher-list '' \
+    'm:{[:lower:]}={[:upper:]}' \
+    '+r:|[._-]=* r:|=*' \
+    '+l:|=*'
+
+# Descriptions for the various types of completions
+zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*' group-name ''
+
+# Make it clear when potential errors are being corrected
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
 
 # Git stuff
 autoload -Uz vcs_info # VCS info
