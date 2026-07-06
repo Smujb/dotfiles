@@ -1,4 +1,12 @@
-# set PATH so it includes ~/.local/bin if it exists
+#!/usr/bin/env bash
+
+# Set PATH so it includes ~/.local/bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Also add ~/.cargo/bin for rust apps
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+ 
