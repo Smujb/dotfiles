@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 
 fastfetch
+systemd-sysext status
+
 
 # Editor
 if [[ $(whence -p "hx") ]] ; then
