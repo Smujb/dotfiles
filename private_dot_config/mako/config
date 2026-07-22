@@ -1,8 +1,8 @@
 # Configure colours to be in line with Sway theme
-background-color=#232136
-text-color=#c4a7e7
-border-color=#2a273f
-progress-color=#393552
+background-color=#040407
+text-color=#f6e3f7
+border-color=#232136
+progress-color=#ece3f7
 
 layer=top
 
