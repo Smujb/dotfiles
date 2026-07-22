@@ -3,14 +3,6 @@
 fastfetch
 systemd-sysext status
 
-
-# Editor
-if [[ $(whence -p "hx") ]] ; then
-	export EDITOR=hx
-else
-	export EDITOR=helix
-fi
-
 alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
 
 # Completions

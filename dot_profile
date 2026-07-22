@@ -10,3 +10,6 @@ if [[ -d "$HOME/.cargo/bin" && ! "$PATH" =~ "$HOME/.cargo/bin" ]] ; then
     PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Preference for terminal and editor
+export EDITOR=hx
+export TERMINAL=kitty
