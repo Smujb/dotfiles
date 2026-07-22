@@ -55,6 +55,7 @@ button:hover {
 #power-profiles-daemon:hover,
 #custom-do-not-disturb.activated:hover,
 #pulseaudio:hover {
+    color: #0e0e16;
     background-color: #eabbec;
 }
 
@@ -103,6 +104,7 @@ button:hover {
 #mpd {
     padding: 0 10px;
     color: #f6e3f7;
+    border-radius: 0;
 }
 
 #window,
