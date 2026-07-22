@@ -24,7 +24,15 @@
 "com.vysp3r.ProtonPlus" = "protonplus"
 "org.gnome.Showtime" = "video player"
 "org.gnome.gitlab.YaLTeR.VideoTrimmer" = "video trimmer"
-
+"io.github.flattool.Warehouse" = "warehouse"
+"io.github.Faugus.faugus-launcher" = "faugus"
+"org.kde.filelight" = "filelight"
+"org.gnome.Loupe" = "loupe"
+"io.github.radiolamp.mangojuice" = "mangojuice"
+"io.missioncenter.MissionCenter" = "mission center"
+"org.gnome.seahorse.Application" = "seahorse"
+"org.qbittorrent.qBittorrent" = "qbittorrent"
+"io.github.swordpuffin.rewaita" = "rewaita"
 
 [general]
 separator = "  "
