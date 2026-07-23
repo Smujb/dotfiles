@@ -64,6 +64,9 @@ fi
 # Include the /usr/games directory where Debian puts games
 export PATH=$PATH:/usr/games
 
+# Make sure $SHELL is set to zsh while in the interactive shell
+export SHELL=$(which zsh)
+
 # Pick the prompt colour then unset the variable for it
 PS1="%B%F{$NAME_COLOUR}%n@%m %F{$DIR_COLOUR}%~%F{$DIR_COLOUR}$ %f%b"
 unset NAME_COLOUR
