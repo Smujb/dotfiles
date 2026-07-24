@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-fastfetch
-systemd-sysext status
-
 alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
 
 # Completions
@@ -37,6 +34,8 @@ bindkey  "^[[3~"  delete-char
 # Different prompt colours for each distro
 NAME_COLOUR="magenta"
 DIR_COLOUR="blue"
+SHOW_FASTFETCH=true
+SHOW_SYSEXT=true
 
 if [[ "$(hostname)" == *"debian"* ]]; then
 	
@@ -45,6 +44,9 @@ if [[ "$(hostname)" == *"debian"* ]]; then
 	# orange
 	DIR_COLOUR="#ffb347"
 
+	# Don't show in distrobox
+	SHOW_SYSEXT=false
+
 elif [[ "$(hostname)" == *"arch"* ]]; then
 
 	# dark blue
@@ -52,12 +54,33 @@ elif [[ "$(hostname)" == *"arch"* ]]; then
 	# light blue
 	DIR_COLOUR="#aec6cf"
 
+	# Don't show in distrobox
+	SHOW_SYSEXT=false
+
 elif [[ "$(hostname)" == *"fedora"* ]]; then
 	
 	# light blue
 	NAME_COLOUR="#aec6cf"
 	# red
 	DIR_COLOUR="#cfaec6"
+
+	# Don't show in distrobox
+	SHOW_SYSEXT=false
+
+elif [[ "$(pwd)" =~ ".local/share/chezmoi" ]]; then
+
+		# pink
+		DIR_COLOUR="#ffd1dc"
+
+		# Don't show in chezmoi cd
+		SHOW_FASTFETCH=false
+		SHOW_SYSEXT=false
+
+		# Show changes not yet staged/committed in git
+		git status
+
+		# Show files modified by chezmoi
+		chezmoi status
 
 fi
 
@@ -84,4 +107,13 @@ else
 	# Syntax highlighting
 	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+fi
+
+# Only show if we want them to be shown
+if $SHOW_FASTFETCH; then
+	fastfetch
+fi
+
+if $SHOW_SYSEXT; then
+	systemd-sysext status
 fi
