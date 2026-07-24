@@ -18,13 +18,11 @@
         "custom/do-not-disturb",
         "idle_inhibitor",
         "pulseaudio",
-//        "network",
         "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
         "backlight",
-//        "sway/language",
         "clock",
         "tray",
 	      "battery"
@@ -36,6 +34,7 @@
         "format" : "{icon} {name} {windows}",
         "format-window-separator" : " | ",
         "window-rewrite" : {
+            "(class<)(.*)(\\.exe>)" : "$2",
             "class<.*\\.(.*)>\\s+" : "$1",
             ".*" : "{class}"  
         },
