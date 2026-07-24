@@ -33,7 +33,12 @@
     "sway/workspaces": {
         "disable-scroll": false,
         "warp-on-scroll": false,
-        "format": "{icon} {name}",
+        "format" : "{icon} {name} {windows}",
+        "format-window-separator" : " | ",
+        "window-rewrite" : {
+            "class<.*\\.(.*)>\\s+" : "$1",
+            ".*" : "{class}"  
+        },
         "format-icons": {
             "urgent": "",
             "focused": "",
