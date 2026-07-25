@@ -31,12 +31,12 @@
     "sway/workspaces": {
         "disable-scroll": false,
         "warp-on-scroll": false,
-        "format" : "{icon} {name} {windows}",
-        "format-window-separator" : " | ",
+        "format" : "{icon} {name}{windows}",
+        "format-window-separator" : " |",
         "window-rewrite" : {
-            "(class<)(.*)(\\.exe>)" : "$2",
-            "class<.*\\.(.*)>\\s+" : "$1",
-            ".*" : "{class}"  
+            "(class<)(.*)(\\.exe>)" : " $2",
+            "class<.*\\.(.*)>\\s+" : " $1",
+            ".*" : " {class}"  
         },
         "format-icons": {
             "urgent": "",
