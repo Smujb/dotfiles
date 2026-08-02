@@ -11,5 +11,5 @@ if [[ -d "$HOME/.cargo/bin" && ! "$PATH" =~ "$HOME/.cargo/bin" ]] ; then
 fi
 
 # Preference for terminal and editor
-export EDITOR=$(brew-proxy --prefix)/bin/hx
+export EDITOR=$(which hx)
 export TERMINAL=$(which kitty)
