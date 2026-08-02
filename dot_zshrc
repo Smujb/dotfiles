@@ -3,6 +3,8 @@
 alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
 alias update-kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
 
+alias sudo="run0 -i"
+
 # Completions
 autoload -Uz compinit && compinit -u
 zstyle ':completion:*' menu select
