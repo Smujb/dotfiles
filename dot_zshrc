@@ -110,7 +110,7 @@ else
 
 	# sudo -> run0 alias
 	# Put it here so it is *not* active in containers
-	alias sudo="run0 -i"
+	alias sudo="run0 --via-shell"
 
 fi
 
