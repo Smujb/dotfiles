@@ -68,6 +68,17 @@ elif [[ "$(hostname)" == *"fedora"* ]]; then
 	# Don't show in distrobox
 	SHOW_SYSEXT=false
 
+elif [[ "$(hostname)" == *"suse"* ]]; then
+
+	# dark green
+	NAME_COLOUR="#03c03c"
+
+	# light green
+	DIR_COLOUR="#77dd77"
+
+	# Don't show in distrobox
+	SHOW_SYSEXT=false
+
 elif [[ "$(pwd)" =~ ".local/share/chezmoi" ]]; then
 
 		# pink
