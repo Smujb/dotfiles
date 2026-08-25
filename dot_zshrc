@@ -6,7 +6,6 @@ alias update-kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /d
 # Completions
 autoload -Uz compinit && compinit -u
 zstyle ':completion:*' menu select
-zstyle ':completion:*' completer _approximate
 zstyle ':completion:*' matcher-list '' \
     'm:{[:lower:]}={[:upper:]}' \
     '+r:|[._-]=* r:|=*' \
