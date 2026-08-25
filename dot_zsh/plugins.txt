@@ -1,0 +1,3 @@
+# Syntax highlighting and autosuggestions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
