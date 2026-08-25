@@ -123,12 +123,6 @@ else
 	# Arch distrobox
 	alias archbtw="distrobox enter Arch"
 
-	# Auto suggestions
-	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-	# Syntax highlighting
-	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 	# sudo -> run0 alias
 	# Put it here so it is *not* active in containers
 	alias sudo="run0 --via-shell --background=''"
