@@ -35,8 +35,11 @@ bindkey  "^[[3~"  delete-char
 HISTFILE=~/.zsh/history_$(hostname)
 HISTSIZE=10000
 SAVEHIST=10000
-setopt append_history
 setopt inc_append_history
+
+# Other misc settings
+setopt auto_pushd
+setopt print_exit_value
 
 # Plugins
 source ~/.antidote/antidote.zsh
