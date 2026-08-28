@@ -1,6 +1,14 @@
+# Python language configuration
 [[language]]
 name = "python"
 language-servers = [ "pyright", "ruff" ]
+
+# GitHub Actions workflow language
+[[language]]
+name = "yaml"
+file-types = [{ glob = ".github/workflows/*.yml" }, { glob = ".github/workflows/*.yaml" }]
+language-servers = ["gh-actions-language-server"]
+roots = [".github", ".git"]
 
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
@@ -8,3 +16,17 @@ typeCheckingMode = "basic"
 [language-server.ruff]
 command = "ruff"
 args = ["server"]
+
+[language-server.gh-actions-language-server]
+command = 'gh-actions-language-server'
+args = ['--stdio']
+config = { sessionToken = ""}
+
+[language-server.texlab.config.texlab.build]
+onSave = true
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
