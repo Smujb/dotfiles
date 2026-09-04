@@ -128,8 +128,10 @@ else
 
 	# sudo -> run0 alias
 	# Put it here so it is *not* active in containers
-	alias sudo="run0 --via-shell --background=''"
-
+	# Also, check that run0 is available on the system
+	if command -v run0 &>/dev/null; then
+		alias sudo="run0 --via-shell --background=''"
+	fi
 fi
 
 # Only show if we want them to be shown
