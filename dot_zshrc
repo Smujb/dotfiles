@@ -4,8 +4,8 @@ alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
 alias update-kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
 
 copyit() {
-	# Use echo -n here so we don't add the last newline
-	echo -n $(eval "$(fc -ln -1)") | wl-copy
+	# Use echo -en here so we don't add the last newline
+	echo -en "$(eval "$(fc -ln -1)")" | wl-copy
 }
 
 # Completions
