@@ -3,9 +3,15 @@
 alias containers-fix="sudo restorecon -RFv /var/lib/containers/storage"
 alias update-kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n"
 
+# Copy the output of the last command input
 copyit() {
 	# Use echo -en here so we don't add the last newline
-	echo -en "$(eval "$(fc -ln -1)")" | wl-copy
+	LAST_CMD=$(fc -ln -1)
+	_PROMPT="\$"
+	if [[ $UID == 0 || $EUID == 0 ]]; then
+		_PROMPT="#"
+	fi
+	echo -en "$_PROMPT ${LAST_CMD}\n$(eval ${LAST_CMD})" | wl-copy
 }
 
 # Completions
