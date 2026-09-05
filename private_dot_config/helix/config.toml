@@ -1,1 +1,4 @@
 theme = "rose_pine_moon"
+
+[editor.lsp]
+display-inlay-hints = true
