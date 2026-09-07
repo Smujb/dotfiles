@@ -45,6 +45,11 @@
             "type": "uptime",
             "key": " 󰅐"
         },
+        {
+          "type" : "command",
+          "key" : " 󰃯",
+          "text" : "birth_install=$(stat -c %W /var); current=$(date +%s); days_difference=$(( (current - birth_install) / 86400 )); echo $days_difference days"  
+        },
         "break",
         {
             "type": "host",
