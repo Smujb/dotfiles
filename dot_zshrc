@@ -155,17 +155,28 @@ if $SHOW_SYSEXT; then
 fi
 
 change_tab_title() {
-	command zellij action rename-tab $1 >/dev/null 2>&1
+	zellij action rename-tab --tab-id $(_zellij_tab_id) $1 >/dev/null 2>&1
 }
 
-autoname_tab() {
+autoname_tab_pwd() {
 	change_tab_title "$(hostname): ${PWD/${HOME}/~}"
+}
+
+autoname_tab_cmd() {
+	change_tab_title "$(hostname): $1"
+}
+
+_zellij_tab_id() {
+	echo $_ZELLIJ_TAB
 }
 
 # Start Zellij if appropriate
 if command -v "zellij" >/dev/null 2>&1; then
 	ZELLIJ_AUTO_EXIT=true
-	add-zsh-hook precmd autoname_tab
+	# Store current tab so we can get it later
+	export _ZELLIJ_TAB=$(zellij action current-tab-info --json | jq ".tab_id")
+	add-zsh-hook precmd autoname_tab_pwd
+	add-zsh-hook preexec autoname_tab_cmd
 	if [[ -z "$ZELLIJ" ]] && command -v "zellij" >/dev/null 2>&1; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         zellij attach -c
