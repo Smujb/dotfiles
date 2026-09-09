@@ -12,3 +12,4 @@ PodmanArgs=--privileged
 PublishPort=11987:11987
 Volume=/etc/coolercontrol:/etc/coolercontrol
 Volume=/var/lib/coolercontrol:/var/lib/coolercontrol
+Volume=/sys/class/hwmon:/sys/class/hwmon:ro
