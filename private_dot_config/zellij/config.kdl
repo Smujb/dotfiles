@@ -16,8 +16,7 @@ keybinds clear-defaults=true {
         // Tab/window management
         bind "Ctrl t" { NewTab; }
         bind "Ctrl n" { NewPane; }
-        bind "Ctrl w" { CloseTab; }
-        bind "Ctrl q" { CloseFocus; }
+        bind "Ctrl w" { CloseFocus; }
 
         // Go to tab
         bind "Ctrl 1" { GoToTab 1; }
