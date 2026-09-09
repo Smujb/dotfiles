@@ -11,7 +11,9 @@ keybinds clear-defaults=true {
         bind "Ctrl j" { MoveFocus "down"; }
         bind "Ctrl k" { MoveFocus "up"; }
         bind "Alt tab" { GoToNextTab; }
-        bind "Ctrl Alt tab" { GoToPreviousTab; }
+        bind "Ctrl Alt tab" { GoToPreviousTab; }        
+        bind "Ctrl Alt l" { GoToNextTab; }
+        bind "Ctrl Alt h" { GoToPreviousTab; }
 
         // Tab/window management
         bind "Ctrl t" { NewTab; }
