@@ -58,7 +58,7 @@ antidote load ${ZDOTDIR:-$HOME}/.zsh/plugins.txt
 
 # Different prompt colours for each distro
 NAME_COLOUR="magenta"
-DIR_COLOUR="blue"
+DIR_COLOUR="green"
 SHOW_FASTFETCH=true
 SHOW_SYSEXT=true
 
