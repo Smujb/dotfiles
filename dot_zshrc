@@ -154,9 +154,19 @@ if $SHOW_SYSEXT; then
 	systemd-sysext status
 fi
 
+change_tab_title() {
+	command zellij action rename-tab $1 >/dev/null 2>&1
+}
+
+autoname_tab() {
+	change_tab_title "$(hostname): ${PWD/${HOME}/~}"
+}
+
 # Start Zellij if appropriate
-ZELLIJ_AUTO_EXIT=true
-if [[ -z "$ZELLIJ" ]] && command -v "zellij" >/dev/null 2>&1; then
+if command -v "zellij" >/dev/null 2>&1; then
+	ZELLIJ_AUTO_EXIT=true
+	add-zsh-hook precmd autoname_tab
+	if [[ -z "$ZELLIJ" ]] && command -v "zellij" >/dev/null 2>&1; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         zellij attach -c
     else
@@ -166,4 +176,5 @@ if [[ -z "$ZELLIJ" ]] && command -v "zellij" >/dev/null 2>&1; then
     if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
         exit
     fi
+	fi
 fi
