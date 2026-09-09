@@ -173,11 +173,12 @@ _zellij_tab_id() {
 # Start Zellij if appropriate
 if command -v "zellij" >/dev/null 2>&1; then
 	ZELLIJ_AUTO_EXIT=true
-	# Store current tab so we can get it later
-	export _ZELLIJ_TAB=$(zellij action current-tab-info | grep -Ev 'name' | grep 'id' | awk '{print $2}')
+	# Find tab number
+	export _ZELLIJ_TAB=$(zellij action current-tab-info 2>/dev/null | grep -Ev 'name' | grep 'id' | awk '{print $2}')
+	[[ -z $_ZELLIJ_TAB ]] && export _ZELLIJ_TAB=0
 	add-zsh-hook precmd autoname_tab_pwd
 	add-zsh-hook preexec autoname_tab_cmd
-	if [[ -z "$ZELLIJ" ]] && command -v "zellij" >/dev/null 2>&1; then
+	if [[ -z "$ZELLIJ" ]]; then
     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
         zellij attach -c
     else
