@@ -11,6 +11,34 @@ keybinds clear-defaults=true {
         bind "Ctrl Alt l" { GoToNextTab; }
         bind "Ctrl Alt h" { GoToPreviousTab; }
 
+        // Distroboxes
+        bind "Ctrl Alt f" {
+            NewTab;
+            Run "distrobox" "enter" "Fedora" {
+                in_place true
+                close_replaced_pane true
+                close_on_exit true
+            }
+        }
+        bind "Ctrl Alt d" {
+            NewTab;
+            Run "distrobox" "enter" "Debian" {
+                in_place true
+                close_replaced_pane true
+                close_on_exit true
+            }
+        }
+        bind "Ctrl Alt a" {
+            NewTab;
+            Run "distrobox" "enter" "Arch" {
+                in_place true
+                close_replaced_pane true
+                close_on_exit true
+            }
+        }
+
+
+
         // Tab/window management
         bind "Ctrl t" { NewTab; }
         bind "Ctrl n" { NewPane; }
