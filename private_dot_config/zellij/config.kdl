@@ -39,6 +39,11 @@ keybinds clear-defaults=true {
 
         // Copy
         bind "Alt c" { Copy; }
+
+        // Editor
+        bind "Ctrl e" {
+            Run "zellij" "edit" "." "--in-place" "--close-replaced-pane"
+        }
         
         // Tab/window management
         bind "Ctrl t" { NewTab; }
