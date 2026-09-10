@@ -37,8 +37,9 @@ keybinds clear-defaults=true {
             }
         }
 
-
-
+        // Copy
+        bind "Alt c" { Copy; }
+        
         // Tab/window management
         bind "Ctrl t" { NewTab; }
         bind "Ctrl n" { NewPane; }
