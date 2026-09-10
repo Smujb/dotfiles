@@ -7,7 +7,7 @@ WantedBy=network-online.target
 # FileName=coolercontrold
 [Container]
 ContainerName=coolercontrold
-Image=coolercontrol/coolercontrold
+Image=docker.io/coolercontrol/coolercontrold
 PodmanArgs=--privileged
 PublishPort=11987:11987
 Volume=/etc/coolercontrol:/etc/coolercontrol
