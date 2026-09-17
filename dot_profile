@@ -12,4 +12,4 @@ fi
 
 # Preference for terminal and editor
 export EDITOR=$(which hx)
-export TERMINAL=$(which kitty)
+export TERMINAL=$(which foot)
