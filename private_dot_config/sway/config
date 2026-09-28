@@ -33,6 +33,8 @@ set $mouse_side_2 button9
 # Warp the mouse when moving focus between windows, not just displays
 mouse_warping container
 
+# Swaynag theme
+swaynag_command swaynag --background eabbec --text 0e0e16 --button-text 0e0e16 --button-background d76ba6 --button-border d76b70 --button-padding 6 --details-background d76b70 --edge bottom
 ### Key bindings
 #
 # Basics:
