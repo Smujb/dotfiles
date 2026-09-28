@@ -86,9 +86,7 @@ mouse_warping container
     bindsym $mod+Shift+Right move right
 #
 # Workspaces:
-bindsym $mod+y set $ws_1 1; set $ws_2 2; set $ws_3 3; set $ws_4 4; set $ws_5 5; set $ws_6 6; set $ws_7 7; set $ws_8 8; set $ws_9 9; set $ws_10 10;
-bindsym $mod+u set $ws_1 11; set $ws_2 12; set $ws_3 13; set $ws_4 14; set $ws_5 15; set $ws_6 16; set $ws_7 17; set $ws_8 18; set $ws_9 19; set $ws_10 20;
-
+# 
 # Switch to workspace
     bindsym $mod+1 workspace number $$ws_1
     bindsym $mod+2 workspace number $$ws_2
