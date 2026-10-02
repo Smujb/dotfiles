@@ -126,9 +126,9 @@ export PATH=$PATH:/usr/games
 export SHELL=$(which zsh)
 
 # Pick the prompt colour then unset the variable for it
-PS1="%B%F{$NAME_COLOUR}%n@%m %F{$DIR_COLOUR}%~%F{$DIR_COLOUR}$ %f%b"
-unset NAME_COLOUR
-unset DIR_COLOUR
+pre-prompt() { print -rP "%B%F{$NAME_COLOUR}%n@%m %F{$DIR_COLOUR}[%~]%f%b" }
+PS1="%B%F{$DIR_COLOUR}> %f%b"
+add-zsh-hook precmd pre-prompt
 
 if env | grep -Fq 'DISTROBOX'; then
 
