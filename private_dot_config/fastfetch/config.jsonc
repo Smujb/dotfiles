@@ -5,17 +5,12 @@
     "width": 30,
     "padding": {
       "top": 1
-    },
-    "color": {
-      "1": "magenta",
-      "2": "magenta"
     }
   },
   "display": {
     "separator": "  ",
     "color": {
-      "separator": "blue",
-      "keys": "blue"
+      "keys": "light_blue"
     }
   },
   "modules": [
